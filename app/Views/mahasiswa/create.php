@@ -1,4 +1,4 @@
-<form>
+<form action="/store" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="npm" class="form-label">NPM</label>
         <input name="npm" type="text" class="form-control" id="npm" aria-describedby="emailHelp">
