@@ -13,6 +13,7 @@ class Mahasiswa extends Model
         'npm',
         'nama',
         'alamat',
+        'deskripsi',
         'created_at',
         'updated_at',
     ];

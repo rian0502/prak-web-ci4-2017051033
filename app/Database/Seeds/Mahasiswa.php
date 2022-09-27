@@ -16,6 +16,7 @@ class Mahasiswa extends Seeder{
                     'npm' => $faker->unique()->numberBetween(1000000000, 9999999999),
                     'nama' => $faker->name(),
                     'alamat' => $faker->address(),
+                    'deskripsi' => $faker->text(100),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ]

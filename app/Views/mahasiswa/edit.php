@@ -1,3 +1,6 @@
+<?= $this->extend('templates/template') ?>
+<?= $this->section('content') ?>
+
 <form action="/update/<?= $mahasiswa['id'] ?>" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="npm" class="form-label">NPM</label>
@@ -14,3 +17,6 @@
 
     <button type="submit" class="btn btn-primary mt-3">Submit</button>
 </form>
+
+
+<?= $this->endSection(); ?>
