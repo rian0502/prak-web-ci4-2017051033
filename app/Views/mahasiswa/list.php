@@ -1,11 +1,13 @@
 <?= $this->extend('templates/template') ?>
 <?= $this->section('content') ?>
 
-<a href="/create" type="button" class="btn btn-primary">Tambah</a>
-<table class=" table table-striped">
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+    <a href="/create" type="button" class="btn btn-primary"> Tambah</a>
+<table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">No</th>
             <th scope="col">NPM</th>
             <th scope="col">Nama</th>
             <th scope="col">Alamat</th>
@@ -13,7 +15,7 @@
             <th colspan="2" scope="col">Action</th>
         </tr>
     </thead>
-    <tbody>`
+    <tbody>
         <?php $no = 1;
         foreach ($mahasiswa as $mhs) :
         ?>
@@ -32,10 +34,10 @@
                 <td>
                     <form action="/delete/<?= $mhs['id']; ?>" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                     </form>
 
-                    <a href="/edit/<?= $mhs['id']; ?>" type="button" class="btn btn-warning">Edit</a>
+                    <a href="/edit/<?= $mhs['id']; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                 </td>
     
             </tr>
@@ -43,6 +45,8 @@
         endforeach ?>
     </tbody>
 </table>
+    </div>
+</div>
 
 
 <?= $this->endSection(); ?>

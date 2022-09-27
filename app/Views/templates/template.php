@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Top Navigation</title>
+  <title>Website</title>
 
-  <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="/assets/adminlte/plugins/summernote/summernote-bs4.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/assets/adminlte/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="/assets/adminlte/dist/css/adminlte.min.css">
 </head>
 
@@ -28,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
-        <a href="/assets/adminlte/index3.html" class="navbar-brand">
+        <a href="<?= base_url(); ?>" class="navbar-brand">
           <img src="/assets/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
@@ -48,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
 
             <li class="nav-item">
-              <a href="<?= base_url() ?>/mahasiswa" class="nav-link <?= ($title == "Home") ? 'active' : ''  ?>">Mahasiswa</a>
+              <a href="<?= base_url() ?>/mahasiswa" class="nav-link <?= ($title == "Mahasiswa") ? 'active' : ''  ?>">Mahasiswa</a>
             </li>
           </ul>
         </div>
@@ -57,12 +49,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </nav>
     <!-- /.navbar -->
 
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-5">
-          <?= $this->renderSection('content') ?>
-        </div>
-      </div>
+    <div class="container-fluid mt-5 w-75">
+      <?= $this->renderSection('content') ?>
     </div>
 
     <!-- Main Footer -->

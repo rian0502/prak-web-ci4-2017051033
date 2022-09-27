@@ -32,7 +32,8 @@ class MahasiswaController extends BaseController
         if(!$this->validate([
             'npm' => 'required|is_unique[mahasiswa.npm]',
             'nama' => 'required',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'deskripsi' => 'required'
         ])){
             $data = [
                 'title' => 'Create Mahasiswa',
@@ -43,7 +44,10 @@ class MahasiswaController extends BaseController
         $mahasiswaModel->save([
             'npm' => $this->request->getVar('npm'),
             'nama' => $this->request->getVar('nama'),
-            'alamat' => $this->request->getVar('alamat')
+            'alamat' => $this->request->getVar('alamat'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
         return redirect()->to('/mahasiswa');
     }
@@ -62,10 +66,12 @@ class MahasiswaController extends BaseController
     }
     public function update($id){
         $mahasiswaModel = new Mahasiswa();
+        return var_dump($this->request->getVar());
         if(!$this->validate([
             'npm' => 'required',
             'nama' => 'required',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'deskripsi' => 'required'
         ])){
             $data = [
                 'title' => 'Edit Mahasiswa',
@@ -78,6 +84,7 @@ class MahasiswaController extends BaseController
             'npm' => $this->request->getVar('npm'),
             'nama' => $this->request->getVar('nama'),
             'alamat' => $this->request->getVar('alamat'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
         $mahasiswaModel->update($id, $data);
